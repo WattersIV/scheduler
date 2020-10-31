@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; }
+
+ol,
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.text--light {
+  font-weight: 300; }
+
+.text--regular {
+  font-weight: 400; }
+
+.text--semi-bold {
+  font-weight: 600; }
+
+.text--bold {
+  font-weight: 700; }
+
+.text--black {
+  font-weight: 900; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Source Sans Pro", sans-serif; }
+
+.layout {
+  display: flex;
+  min-height: 100vh; }
+
+@media only screen and (max-width: 960px) {
+  html {
+    font-size: 12px; }
+  .layout {
+    flex-direction: column; } }
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 10px; } }
+
+.button {
+  border-radius: 1rem;
+  border: 0;
+  font-size: 1.5rem;
+  height: 2rem;
+  line-height: 1.2rem;
+  margin-right: 1rem;
+  width: 8rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent; }
+
+.button:hover {
+  cursor: pointer;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid transparent; }
+
+.button--danger {
+  color: #ee5253;
+  border-color: #ee5253;
+  background-color: transparent; }
+
+.button--confirm {
+  color: #10ac84;
+  border-color: #10ac84;
+  background-color: transparent; }
+
+.button--danger:hover {
+  color: #fff;
+  background-color: #ee5253; }
+
+.button--confirm:hover {
+  color: #fff;
+  background-color: #10ac84; }
+
+.button:last-of-type {
+  margin-right: 0; }
+
+.button:focus {
+  outline: none; }
+
+.button:disabled {
+  border-style: solid;
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+  opacity: 0.7; }
+
+
+/*# sourceMappingURL=main.css.map*/
