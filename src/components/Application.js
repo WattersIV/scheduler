@@ -17,7 +17,7 @@ export default function Application(props) {
   const dailyAppointments = getAppointmentsForDay(state, state.day)
   const interviewers = getInterviewsForDay(state, state.day)
 
-  function bookInterview(id, interview, cb, SHOW) {
+  function bookInterview(id, interview, cb, SHOW, ERROR) {
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -30,10 +30,13 @@ export default function Application(props) {
       .then(() => {
         setState({...state, appointments}); 
         cb(SHOW)
+      }) 
+      .catch(() => {
+        cb(ERROR, true)
       })
   } 
 
-  function removeInterview(id, cb, EMPTY) {
+  function removeInterview(id, cb, EMPTY, ERROR) {
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -46,8 +49,10 @@ export default function Application(props) {
       .then (() => {
         setState({ ...state, appointments})
         cb(EMPTY)
+      }) 
+      .catch(() => {
+        cb(ERROR, true)
       })
-
   }
 
 
