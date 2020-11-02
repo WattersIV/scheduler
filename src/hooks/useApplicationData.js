@@ -7,7 +7,7 @@ import axios from 'axios';
     day: "Monday",
     days: [],
     appointments: {},
-    interviewers: {}
+    interviewers: {}, 
   });  
   
   function bookInterview(id, interview, cb, SHOW, ERROR) {
@@ -22,10 +22,10 @@ import axios from 'axios';
     axios.put(`/api/appointments/${id}`, appointment) 
       .then(() => {
         setState({...state, appointments}); 
-        cb(SHOW)
-      }) 
+        cb(SHOW) 
+      })
       .catch(() => {
-        cb(ERROR, true)
+        cb(ERROR, true) 
       })
   } 
   
@@ -58,6 +58,8 @@ import axios from 'axios';
       setState(prev =>({...prev, days: res[0].data, appointments: res[1].data, interviewers: res[2].data }))
     })
   }, []);
+
+
   return {
     state, 
     setDay, 

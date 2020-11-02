@@ -3,13 +3,13 @@ import DayList from "./DayList"
 import Appointment from "components/Appointment" 
 import "components/Application.scss"; 
 import {getAppointmentsForDay, getInterview, getInterviewsForDay} from "../helpers/selectors"
-import useApplicationData from "hooks/useApplicationData";
+import useApplicationData from "hooks/useApplicationData"; 
 
 export default function Application(props) {
   const {state, setDay, bookInterview, removeInterview} = useApplicationData()
   const dailyAppointments = getAppointmentsForDay(state, state.day)
   const interviewers = getInterviewsForDay(state, state.day) 
-
+  
   const mapAppointments = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview)  
     return(
@@ -38,7 +38,7 @@ export default function Application(props) {
   day={state.day}
   setDay={setDay}
   />
-</nav>
+</nav> 
 <img
   className="sidebar__lhl sidebar--centered"
   src="images/lhl.png"
