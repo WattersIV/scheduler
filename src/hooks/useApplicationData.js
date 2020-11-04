@@ -54,7 +54,6 @@ import axios from 'axios';
       axios.get('/api/appointments'),
       axios.get('/api/interviewers')
     ]).then((res) => {
-      console.log(res[2].data)
       setState(prev =>({...prev, days: res[0].data, appointments: res[1].data, interviewers: res[2].data }))
     })
   }, []);
