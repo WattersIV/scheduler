@@ -57,12 +57,33 @@ import axios from 'axios';
       setState(prev =>({...prev, days: res[0].data, appointments: res[1].data, interviewers: res[2].data }))
     })
   }, []);
+  
+  useEffect(() => {
+    if (state.days) updateSpots() 
+  }, [state.appointments])
 
+  function updateSpots() {
+    const index = state.days.findIndex(day => day.name === state.day) //get index of current day in the days array
+    if (state.days[index]) {
+      const dayAppointments = state.days[index].appointments 
+      const spots = dayAppointments.filter(appt => !state.appointments[appt].interview).length; //get number of spots that arent null 
+     //copy days obj of the current day and update spots
+      const day = {
+        ...state.days[index],
+        spots
+      } 
+      //cpy the whole days array then replace current day with the updated one above
+      const days = [...state.days] 
+      days.splice(index, 1, day) 
+
+      setState(prev => ({...prev, days}))
+    } 
+  }
 
   return {
     state, 
     setDay, 
     bookInterview, 
-    removeInterview
+    removeInterview, 
   }  
 }  
