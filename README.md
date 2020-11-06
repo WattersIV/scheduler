@@ -1,6 +1,6 @@
 # Interview Scheduler
-!["Screenshot of create new appointment page"](https://github.com/WattersIV/tinyapp/blob/master/docs/urlsPage.png?raw=true)
-!["Screenshot of edit and delete page"](https://github.com/WattersIV/tinyapp/blob/master/docs/editPage.png?raw=true)
+!["Screenshot of create new appointment page"](https://github.com/WattersIV/scheduler/blob/master/public/images/createNew.png?raw=true)
+!["Screenshot of edit and delete page"](https://github.com/WattersIV/scheduler/blob/master/public/images/edit&delete.png?raw=true)
 
 ## Setup
 
